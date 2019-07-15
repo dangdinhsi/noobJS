@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<!-- Latest compiled and minified CSS & JS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	
-	<script type="text/javascript">
-		 window.onload = function() {
- document.getElementById("deleteGame").onclick = function fun() {
- var id =document.forms["sidang"]["idGame"].value;
- var urldelete ='?id='+id;
- var Url = "https://1-dot-thanhngoc-031293.appspot.com/hellogame"+urldelete;
- var xhr = new XMLHttpRequest();
- xhr.open('DELETE', Url, true);
- xhr.send();
- document.write("Xóa game thành công !!!");
- }
- }
-	</script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script type="text/javascript">
+    window.onload = function() {
+        document.getElementById("deleteGame").onclick = function fun() {
+            var id = document.forms["sidang"]["idGame"].value;
+            var urldelete = '?id=' + id;
+            var Url = "https://1-dot-thanhngoc-031293.appspot.com/hellogame" + urldelete;
+            var xhr = new XMLHttpRequest();
+            xhr.open('DELETE', Url, true);
+            xhr.send();
+            document.write("Xóa game thành công !!!");
+        }
+    }
+    </script>
 </head>
+
 <body>
-	<div class="container">
-	<form name="sidang" class="form-group">
-	Nhập lại Id cần xóa: <input class="form-control" type="text" name="idGame" placeholder="id game...">
-	<br><br>
-	<input class="form-control btn-success" type="button" id="deleteGame" onclick="f1()" value="DETELE"/>
-	</form>
-	</div>
-	<script src="//code.jquery.com/jquery.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <div class="container">
+        <form name="sidang" class="form-group">
+            Nhập lại Id cần xóa: <input class="form-control" type="text" name="idGame" placeholder="id game...">
+            <br><br>
+            <input class="form-control btn-success" type="button" id="deleteGame" onclick="f1()" value="DETELE" />
+        </form>
+    </div>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
+
 </html>

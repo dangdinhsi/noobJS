@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style type="text/css">
-		img{
-			width: 200px;
-		}
-    a{
-      text-decoration: none;
-      font-weight: bold;
-    }
-	</style>
-</head>
-<body>
-<div id="id01">
-</div>
-<script>
-var xmlhttp = new XMLHttpRequest();
-var url = "https://1-dot-thanhngoc-031293.appspot.com/hellogame";
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myArr = JSON.parse(this.responseText);
-    var myArr2 =myArr.data;
-    myFunction(myArr2);
-  }
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
 
-function myFunction(arr) {
-  var out = 'LIST GAME<br><br>';
-  for(i = 0; i < arr.length; i++) {
-  	if(parseInt(arr[i].status)!=-1){   // lấy ra status nếu =1 thì get hết thông tin ra.
-    out +='<img src='+arr[i].image+'>'+'<p>' +'ID: '+arr[i].id + '</p>'+'<p>' + 'NAME: '+
-    arr[i].name + '</p>'+'<p>' +'description: '+arr[i].description+ '</p>'+'<p>' +'genre: '+arr[i].genre+ '</p>'+'<p>' +'publisher: '+arr[i].publisher+ '</p>'+'<p>' +'release: '+arr[i].release+ '</p>'+'<p>'+'<a href="delete.html">DELETE</a>'+'  '+'<a href="update.html">UPDATE</a>'+'</p>'+'<hr>';
-	}
-  }
-  document.getElementById("id01").innerHTML = out;
-}
-</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    img {
+        width: 200px;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="id01">
+    </div>
+    <script>
+    var xmlhttp = new XMLHttpRequest();
+    var url = "https://1-dot-thanhngoc-031293.appspot.com/hellogame";
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myArr = JSON.parse(this.responseText);
+            var myArr2 = myArr.data;
+            myFunction(myArr2);
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function myFunction(arr) {
+        var out = 'LIST GAME<br><br>';
+        for (i = 0; i < arr.length; i++) {
+            if (parseInt(arr[i].status) != -1) { // lấy ra status khác -1 thì get hết thông tin ra.
+                out += '<img src=' + arr[i].image + '>' + '<p>' + 'ID: ' + arr[i].id + '</p>' + '<p>' + 'NAME: ' +
+                    arr[i].name + '</p>' + '<p>' + 'description: ' + arr[i].description + '</p>' + '<p>' + 'genre: ' + arr[i].genre + '</p>' + '<p>' + 'publisher: ' + arr[i].publisher + '</p>' + '<p>' + 'release: ' + arr[i].release + '</p>' + '<p>' + '<a href="delete.html">DELETE</a>' + '  ' + '<a href="update.html">UPDATE</a>' + '</p>' + '<hr>';
+            }
+        }
+        document.getElementById("id01").innerHTML = out;
+    }
+    </script>
 </body>
+
 </html>
