@@ -34,7 +34,7 @@ function myFunction(arr) {
   for(i = 0; i < arr.length; i++) {
   	if(parseInt(arr[i].status)!=-1){   // lấy ra status nếu =1 thì get hết thông tin ra.
     out +='<img src='+arr[i].image+'>'+'<p>' +'ID: '+arr[i].id + '</p>'+'<p>' + 'NAME: '+
-    arr[i].name + '</p>'+'<p>' +'description: '+arr[i].description+ '</p>'+'<p>' +'genre: '+arr[i].genre+ '</p>'+'<p>' +'publisher: '+arr[i].publisher+ '</p>'+'<p>' +'release: '+arr[i].release+ '</p>'+'<p>'+'<a href="delete.html">DELETE</a>'+'</p>'+'<hr>';
+    arr[i].name + '</p>'+'<p>' +'description: '+arr[i].description+ '</p>'+'<p>' +'genre: '+arr[i].genre+ '</p>'+'<p>' +'publisher: '+arr[i].publisher+ '</p>'+'<p>' +'release: '+arr[i].release+ '</p>'+'<p>'+'<a href="delete.html">DELETE</a>'+'  '+'<a href="update.html">UPDATE</a>'+'</p>'+'<hr>';
 	}
   }
   document.getElementById("id01").innerHTML = out;

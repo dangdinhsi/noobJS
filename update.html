@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script>
+        window.onload = function() {
+ document.getElementById("Save").onclick = function fun() {
+ var id = document.forms["sidang"]["id"].value;
+ var a =document.forms["sidang"]["name"].value;
+ var b=document.forms["sidang"]["image"].value;
+ var c=document.forms["sidang"]["description"].value;
+ var d=document.forms["sidang"]["genre"].value;
+ var e=document.forms["sidang"]["publisher"].value;
+ var f=document.forms["sidang"]["release"].value;
+ var sendOBJ =JSON.stringify({id:id,name:a,image:b,description:c,genre:d,publisher:e,release:f});
+ var Url = "https://1-dot-thanhngoc-031293.appspot.com/hellogame";
+ var xhr = new XMLHttpRequest();
+ xhr.open('PUT', Url, true);
+ xhr.send(sendOBJ);
+ document.write("Update thanh cong!!!");
+ }
+ }
+</script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Update thông tin game</h2><br><br>
+        <form name="sidang" class="form-group form-inline">
+            <label class="form-group">Vui lòng nhập lại ID:</label>
+            <input class="form-control" type="text" name="id">
+            <br><br>
+            <label class="form-group">Thông tin cần update:</label>
+            <br>
+
+            <input class="form-control " type="text" name="name" placeholder="name...">
+            <br><br>
+            <input class="form-control" type="text" name="image" placeholder="url image.." />
+            <br><br>
+            <input class="form-control" type="text" name="description" placeholder="description..." />
+            <br><br>
+            <input class="form-control" type="text" name="genre" placeholder="genre..." />
+            <br><br>
+            <input class="form-control" type="text" name="publisher" placeholder="publisher..." />
+            <br><br>
+            <input class="form-control" type="text" name="release" placeholder="release..." />
+            <br><br>
+            <input class="form-control btn-success" type="button" id="Save" onclick="f1()" value="UPDATE" />
+        </form>
+    </div>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+
+</html>
